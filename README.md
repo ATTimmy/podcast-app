@@ -87,6 +87,23 @@ npm install husky --save-dev
 
 ## Dependencies
 
+- **Axios**: A promise-based HTTP client for making API requests. It is used in this project to handle HTTP requests and fetch data from the server.
+
+  Example:
+
+  ```javascript
+  import axios from "axios";
+
+  axios
+    .get("/api/data")
+    .then((response) => {
+      console.log(response.data);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+  ```
+
 - **React Router DOM**: A library that provides navigation routing for React applications. It is used in this project to define and manage application routes and views in a declarative way.
 
   Example:
