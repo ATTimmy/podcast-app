@@ -7,6 +7,7 @@ A small app for listening to music podcasts.
 - [Introduction](#introduction)
 - [Environment Variables and Dev/Prod Settings](#environment-variables-and-devprod-settings)
 - [Dev/Prod Configurations with Vite](#devprod-configurations-with-vite)
+- [Husky hooks configured](#husky-hooks-configured)
 - [Dependencies](#dependencies)
 
 ## Introduction
@@ -65,6 +66,24 @@ To generate the production version of the application, follow these steps:
 
 3. Once the build process is complete, optimized files will be generated in the `dist` folder.
 4. To serve the application, you can use any static web server, such as [Serve](https://www.npmjs.com/package/serve) o [Netlify](https://www.netlify.com/).
+
+## Husky Integration
+
+Husky is a tool that allows you to set up Git hooks to automatically run scripts before certain events, such as commits or pushes. This can help you ensure that your code complies with certain style rules and passes testing before being committed to the repository.
+
+### Husky hooks configured
+
+In this project, we have configured the following Husky hook:
+
+- `pre-commit`: This hook is executed before each commit. In our case, we have configured this hook to execute the linting and test commands to ensure that the code complies with the defined standards.
+
+### Installation and configuration
+
+To install Husky in your project, run the following command:
+
+```bash
+npm install husky --save-dev
+```
 
 ## Dependencies
 
