@@ -1,0 +1,99 @@
+[
+    {
+        "id": 1,
+        "title": "Crims",
+        "description": "This is the description of Podcast 1",
+        "episodes": [
+            { "id": 1, "title": "Brito y Picatostes (PARTE 1)", "description": "La fuga de Brito y Picatostes" },
+            { "id": 2, "title": "Brito y Picatostes (PARTE 2)", "description": "La detencion de Brito y Picatostes" }
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Podcast 2",
+        "description": "This is the description of Podcast 2",
+        "episodes": [
+            { "id": 1, "title": "Episode 1", "description": "Episode 1 Description" },
+            { "id": 2, "title": "Episode 2", "description": "Episode 2 Description" }
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Podcast 3",
+        "description": "This is the description of Podcast 3",
+        "episodes": [
+            { "id": 1, "title": "Episode 1", "description": "Episode 1 Description" },
+            { "id": 2, "title": "Episode 2", "description": "Episode 2 Description" }
+        ]
+    }, 
+    {
+        "id": 4,
+        "title": "Podcast 4",
+        "description": "This is the description of Podcast 4",
+        "episodes": [
+            { "id": 1, "title": "Episode 1", "description": "Episode 1 Description" },
+            { "id": 2, "title": "Episode 2", "description": "Episode 2 Description" }
+        ]
+    },
+    {
+        "id": 5,
+        "title": "Podcast 5",
+        "description": "This is the description of Podcast 5",
+        "episodes": [
+            { "id": 1, "title": "Episode 1", "description": "Episode 1 Description" },
+            { "id": 2, "title": "Episode 2", "description": "Episode 2 Description" }
+        ]
+    },
+    {
+        "id": 6,
+        "title": "Podcast 6",
+        "description": "This is the description of Podcast 6",
+        "episodes": [
+            { "id": 1, "title": "Episode 1", "description": "Episode 1 Description" },
+            { "id": 2, "title": "Episode 2", "description": "Episode 2 Description" }
+        ]
+    },
+    {
+        "id": 7,
+        "title": "Podcast 7",
+        "description": "This is the description of Podcast 7",
+        "episodes": [
+            { "id": 1, "title": "Episode 1", "description": "Episode 1 Description" },
+            { "id": 2, "title": "Episode 2", "description": "Episode 2 Description" }
+        ]
+    },
+    {
+        "id": 8,
+        "title": "Podcast 8",
+        "description": "This is the description of Podcast 8",
+        "episodes": [
+            { "id": 1, "title": "Episode 1", "description": "Episode 1 Description" },
+            { "id": 2, "title": "Episode 2", "description": "Episode 2 Description" }
+        ]
+    },
+    {
+        "id": 9,
+        "title": "Podcast 9",
+        "description": "This is the description of Podcast 9",
+        "episodes": [
+            { "id": 1, "title": "Episode 1", "description": "Episode 1 Description" },
+            { "id": 2, "title": "Episode 2", "description": "Episode 2 Description" }
+        ]
+    },
+    {
+        "id": 10,
+        "title": "Podcast 10",
+        "description": "This is the description of Podcast 10",
+        "episodes": [
+            { "id": 1, "title": "Episode 1", "description": "Episode 1 Description" },
+            { "id": 2, "title": "Episode 2", "description": "Episode 2 Description" }
+        ]
+    }
+]
+
+  
+  
+  
+  
+  
+  
