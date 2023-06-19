@@ -18,7 +18,7 @@ export const fetchPodcasts = createAsyncThunk(
 		const day = 24 * 60 * 60 * 1000;
 
 		if (dataNow - lastFetchTimestamp < day) {
-			return state.podcasts.data;
+			return state.podcasts.podcasts;
 		}
 
 		try {
