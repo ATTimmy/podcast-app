@@ -1,20 +1,31 @@
 import { useEffect, useState } from 'react';
-import mockPodcasts from '../../mock/podcasts.json';
-import { Link } from 'react-router-dom';
 
-import { type Podcast } from './models/Podcast';
+import { Card, Col, Row } from 'react-bootstrap';
+import { useSelector } from 'react-redux';
+
+function createObject(data: any): JSX.Element[] {
+	return data.map((val: any) => (
+		<Col key={val.id}>
+			<Card>
+				<Card.Img variant='top' src={val.image} />
+				<Card.Body>
+					<Card.Title>{val.titleName}</Card.Title>
+					<Card.Text>{val.authorName}</Card.Text>
+				</Card.Body>
+			</Card>
+		</Col>
+	));
+}
 
 export default function PodcastList(): JSX.Element {
-	const [podcasts, setPodcasts] = useState<Podcast[]>([]);
+	const [podcasts, setPodcasts] = useState<JSX.Element[]>([]);
 	const [isLoading, setIsLoading] = useState<boolean>(true);
+	const test: any = useSelector((state) => state);
 
 	useEffect(() => {
-		// Simulating an asynchronous request to get the podcasts with a loading time of 2 seconds to simulate loading
-		setTimeout(() => {
-			setPodcasts(mockPodcasts);
-			setIsLoading(false);
-		}, 2000);
-	}, []);
+		setPodcasts(createObject(test.podcasts.podcasts));
+		setIsLoading(false);
+	}, [test]);
 
 	return (
 		<div>
@@ -26,21 +37,9 @@ export default function PodcastList(): JSX.Element {
 					</div>
 				</div>
 			) : (
-				<ul>
-					{podcasts.map((podcast) => (
-						<li key={podcast.id}>
-							<h2>{podcast.title}</h2>
-							<p>{podcast.description}</p>
-							<Link
-								to={`/podcast/${podcast.id}`}
-								state={{ episodes: podcast.episodes }}
-								className='btn btn-primary'
-							>
-								View Episodes
-							</Link>
-						</li>
-					))}
-				</ul>
+				<Row xs={1} md={2} lg={4} className='g-4'>
+					{podcasts}
+				</Row>
 			)}
 		</div>
 	);
