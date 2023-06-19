@@ -1,7 +1,7 @@
 import {
 	type PodcastItem,
 	type PodcastItemData,
-} from '../models/ModelStorePodcast';
+} from '../../../models/ModelStorePodcast';
 
 export default function FilterDataPodcast(data: any): PodcastItemData[] {
 	const filterObject: PodcastItemData[] = data.map((val: any) => {
@@ -9,7 +9,7 @@ export default function FilterDataPodcast(data: any): PodcastItemData[] {
 			authorName: val['im:artist'].label,
 			id: val.id.attributes['im:id'],
 			image: val['im:image'].find(
-				(find: any) => find.attributes.height === '60'
+				(find: any) => find.attributes.height === '170'
 			)?.label,
 			titleName: val['im:name'].label,
 		};
