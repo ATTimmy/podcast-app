@@ -78,7 +78,7 @@
 
   export  interface AppState {
       podcasts: {
-        data: PodcastItemData[];
+        podcasts: PodcastItemData[];
         lastFetchTimestamp: number;
       };
     }
