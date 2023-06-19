@@ -19,7 +19,10 @@ export const loadInitialData = async (): Promise<void> => {
 
 // Subscribe a function to the store status to store the data in the localStorage
 store.subscribe(() => {
-	const state = store.getState();
+	const state = store.getState().podcasts;
 	const serializedState = JSON.stringify(state);
 	localStorage.setItem('reduxState', serializedState);
 });
+
+// Call the asynchronous function to initiate data loading.
+void loadInitialData();
