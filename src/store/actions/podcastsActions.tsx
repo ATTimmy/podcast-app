@@ -4,7 +4,7 @@ import {
 	type AppState,
 	type PodcastItemData,
 	type StorePodcastData,
-} from './models/ModelStorePodcast';
+} from '../../models/ModelStorePodcast';
 import FilterDataPodcast from './utils/FilterDataPodcast';
 import { API_URL } from '../../constants/constants';
 
