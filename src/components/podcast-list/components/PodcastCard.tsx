@@ -22,7 +22,11 @@ export default function PodcastCard(
 	filteredData.forEach((val: PodcastItem, index: number) => {
 		row.push(
 			<div className='podcast-column' key={val.id}>
-				<Link className='link-card' to={`/podcast/${val.id}`}>
+				<Link
+					className='link-card'
+					to={`/podcast/${val.id}`}
+					state={{ description: val.description, podcastId: val.id }}
+				>
 					<Card border='0' className='podcast-card shadow-sm'>
 						<Card.Img src={val.image} className='rounded-circle' />
 						<Card.Body>
@@ -35,7 +39,6 @@ export default function PodcastCard(
 		);
 
 		if ((index + 1) % 4 === 0 || index === filteredData.length - 1) {
-			// Modificación aquí
 			rows.push(
 				<div className='podcast-row' key={index}>
 					{row}

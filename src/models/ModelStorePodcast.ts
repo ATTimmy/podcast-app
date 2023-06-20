@@ -69,6 +69,7 @@
 
   export interface PodcastItem {
     authorName: string;
+    description: string;
     id: string;
     image: string | undefined;
     titleName: string;
