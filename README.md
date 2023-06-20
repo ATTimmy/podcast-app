@@ -92,16 +92,16 @@ npm install husky --save-dev
   Example:
 
   ```javascript
-  import axios from "axios";
+  import axios from 'axios';
 
   axios
-    .get("/api/data")
-    .then((response) => {
-      console.log(response.data);
-    })
-    .catch((error) => {
-      console.error(error);
-    });
+  	.get('/api/data')
+  	.then((response) => {
+  		console.log(response.data);
+  	})
+  	.catch((error) => {
+  		console.error(error);
+  	});
   ```
 
 - **React Router DOM**: A library that provides navigation routing for React applications. It is used in this project to define and manage application routes and views in a declarative way.
@@ -109,17 +109,17 @@ npm install husky --save-dev
   Example:
 
   ```javascript
-  import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+  import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
   function App() {
-    return (
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-        </Routes>
-      </Router>
-    );
+  	return (
+  		<Router>
+  			<Routes>
+  				<Route path='/' element={<Home />} />
+  				<Route path='/about' element={<About />} />
+  			</Routes>
+  		</Router>
+  	);
   }
   ```
 
@@ -132,23 +132,23 @@ npm install husky --save-dev
   ```javascript
   // Define an initial status and actions
   const initialState = {
-    counter: 0,
+  	counter: 0,
   };
 
-  const increment = () => ({ type: "INCREMENT" });
+  const increment = () => ({ type: 'INCREMENT' });
 
   // Create a reducer
   const reducer = (state = initialState, action) => {
-    switch (action.type) {
-      case "INCREMENT":
-        return { ...state, counter: state.counter + 1 };
-      default:
-        return state;
-    }
+  	switch (action.type) {
+  		case 'INCREMENT':
+  			return { ...state, counter: state.counter + 1 };
+  		default:
+  			return state;
+  	}
   };
 
   // Create a store and configure Redux in the application
-  import { createStore } from "redux";
+  import { createStore } from 'redux';
 
   const store = createStore(reducer);
   ```
@@ -162,11 +162,11 @@ npm install husky --save-dev
   ```javascript
   // Unit test of a function
   function sum(a, b) {
-    return a + b;
+  	return a + b;
   }
 
-  test("sum adds two numbers correctly", () => {
-    expect(sum(1, 2)).toBe(3);
+  test('sum adds two numbers correctly', () => {
+  	expect(sum(1, 2)).toBe(3);
   });
   ```
 
@@ -177,13 +177,13 @@ npm install husky --save-dev
   Example:
 
   ```javascript
-  import { render, screen } from "@testing-library/react";
-  import App from "./App";
+  import { render, screen } from '@testing-library/react';
+  import App from './App';
 
-  test("renders the app component", () => {
-    render(<App />);
-    const linkElement = screen.getByText(/Hello, World!/i);
-    expect(linkElement).toBeInTheDocument();
+  test('renders the app component', () => {
+  	render(<App />);
+  	const linkElement = screen.getByText(/Hello, World!/i);
+  	expect(linkElement).toBeInTheDocument();
   });
   ```
 
@@ -206,3 +206,15 @@ npm install husky --save-dev
 - **Prettier**: A code formatter that helps to maintain consistent code structure and style. It is used in this project to automatically format code according to the configured style rules.
 
   Documentation: [Prettier](https://prettier.io/)
+
+- **Moment.js**: JavaScript library for date formatting and manipulation.
+
+  Example:
+
+  ```javascript
+  import moment from 'moment';
+
+  const currentDate = moment().format('YYYY-MM-DD');
+  ```
+
+  Documentation: [moment](https://momentjs.com/docs/)
