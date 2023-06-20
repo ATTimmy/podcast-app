@@ -1,6 +1,7 @@
 import { Card } from 'react-bootstrap';
 import { type PodcastItem } from '../../../models/ModelStorePodcast';
 import GetPodcastSearch from './utils/GetPodcastSearch';
+import { Link } from 'react-router-dom';
 
 export default function PodcastCard(
 	data: PodcastItem[],
@@ -21,13 +22,15 @@ export default function PodcastCard(
 	filteredData.forEach((val: PodcastItem, index: number) => {
 		row.push(
 			<div className='podcast-column' key={val.id}>
-				<Card border='0' className='podcast-card shadow-sm'>
-					<Card.Img src={val.image} className='rounded-circle' />
-					<Card.Body>
-						<Card.Title>{val.titleName}</Card.Title>
-						<Card.Text>{`Author: ${val.authorName}`}</Card.Text>
-					</Card.Body>
-				</Card>
+				<Link className='link-card' to={`/podcast/${val.id}`}>
+					<Card border='0' className='podcast-card shadow-sm'>
+						<Card.Img src={val.image} className='rounded-circle' />
+						<Card.Body>
+							<Card.Title>{val.titleName}</Card.Title>
+							<Card.Text>{`Author: ${val.authorName}`}</Card.Text>
+						</Card.Body>
+					</Card>
+				</Link>
 			</div>
 		);
 

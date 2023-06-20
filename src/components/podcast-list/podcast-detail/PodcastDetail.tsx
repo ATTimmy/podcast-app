@@ -1,22 +1,32 @@
-import { useParams, useLocation } from 'react-router-dom';
-import { type Episode } from '../models/Podcast';
+import { useEffect } from 'react';
+import axios from 'axios';
+import { useParams } from 'react-router-dom';
 
 export default function PodcastDetail(): JSX.Element {
 	const { podcastId } = useParams<{ podcastId: string }>();
-	const location = useLocation();
-	const episodes: Episode[] = location.state?.episodes;
+
+	useEffect(() => {
+		const fetchData = async (): Promise<void> => {
+			try {
+				if (podcastId != null) {
+					const response = await axios.get(
+						`https://api.allorigins.win/raw?url=https://itunes.apple.com/lookup?id=${podcastId}&media=podcast&entity=podcastEpisode&limit=20`
+					);
+
+					const data = response.data;
+					console.log(data);
+				}
+			} catch (error) {
+				console.error(error);
+			}
+		};
+
+		void fetchData();
+	}, [podcastId]);
 
 	return (
 		<div>
-			<h1>Hello, I am the detail page for Podcast {podcastId}</h1>
-			<ul>
-				{episodes.map((episode: any) => (
-					<li key={episode.id}>
-						<h2>{episode.title}</h2>
-						<p>{episode.description}</p>
-					</li>
-				))}
-			</ul>
+			<h5>{podcastId}</h5>
 		</div>
 	);
 }
