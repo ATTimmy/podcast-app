@@ -1,3 +1,29 @@
-#podcast-details{
-    display: flex;
-}
+#podcast-details {
+    margin-top:50px;
+    display: flex;    
+    .podcast-details-container {
+      display: flex;
+      align-items: flex-start;
+      
+      .card-detail {
+        display: flex; 
+        flex-direction: column;
+        flex-grow: 0; 
+        flex-basis: 300px; 
+      }
+      .loading-spinner {
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+      }
+      
+      .list-episodes {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 0;
+        margin-left: 50px; 
+      }
+    }
+  }
+  
