@@ -25,7 +25,7 @@ export default function PodcastCard(
 				<Link
 					className='link-card'
 					to={`/podcast/${val.id}`}
-					state={{ description: val.description, podcastId: val.id }}
+					state={{ podcastDetail: val }}
 				>
 					<Card border='0' className='podcast-card shadow-sm'>
 						<Card.Img src={val.image} className='rounded-circle' />

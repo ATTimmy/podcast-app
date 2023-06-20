@@ -1,32 +1,38 @@
-import { useEffect } from 'react';
-import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { Card, Container } from 'react-bootstrap';
+import { useLocation } from 'react-router-dom';
+import './PodcastDetail.scss';
 
 export default function PodcastDetail(): JSX.Element {
-	const { podcastId } = useParams<{ podcastId: string }>();
-
-	useEffect(() => {
-		const fetchData = async (): Promise<void> => {
-			try {
-				if (podcastId != null) {
-					const response = await axios.get(
-						`https://api.allorigins.win/raw?url=https://itunes.apple.com/lookup?id=${podcastId}&media=podcast&entity=podcastEpisode&limit=20`
-					);
-
-					const data = response.data;
-					console.log(data);
-				}
-			} catch (error) {
-				console.error(error);
-			}
-		};
-
-		void fetchData();
-	}, [podcastId]);
+	const { state } = useLocation();
+	const { podcastDetail } = state;
+	const {
+		description,
+		image,
+		titleName,
+		authorName,
+	}: {
+		description: string;
+		podcastId: string;
+		image: string;
+		titleName: string;
+		authorName: string;
+	} = podcastDetail;
 
 	return (
-		<div>
-			<h5>{podcastId}</h5>
+		<div id='podcast-details'>
+			<Container>
+				<div>
+					<Card border='0' className='podcast-card shadow-sm'>
+						<Card.Img src={image} />
+						<Card.Body>
+							<Card.Title>{titleName}</Card.Title>
+							<Card.Subtitle className='mb-2 text-muted'>{`by ${authorName}`}</Card.Subtitle>
+							<Card.Text>Description:</Card.Text>
+							<Card.Text>{description}</Card.Text>
+						</Card.Body>
+					</Card>
+				</div>
+			</Container>
 		</div>
 	);
 }
